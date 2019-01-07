@@ -24,7 +24,7 @@ nat = Natural Phenomenon
 
 """
 # Loading training data 
-with open ('ner_corpus_260_custom', 'rb') as fp:
+with open ('Data/ner_corpus_260_custom', 'rb') as fp:
     TRAIN_DATA = pickle.load(fp)
 
 @plac.annotations(
