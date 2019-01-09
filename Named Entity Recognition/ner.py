@@ -33,7 +33,7 @@ with open ('Data/ner_corpus_260_custom', 'rb') as fp:
     output_dir=("Optional output directory", "option", "o", Path),
     n_iter=("Number of training iterations", "option", "n", int))
 
-def main(model=None, new_model_name='animal', output_dir=None, n_iter=10):
+def main(model=None, new_model_name='new_model', output_dir=None, n_iter=10):
     """Setting up the pipeline and entity recognizer, and training the new entity."""
     if model is not None:
         nlp = spacy.load(model)  # load existing spacy model
@@ -69,7 +69,7 @@ def main(model=None, new_model_name='animal', output_dir=None, n_iter=10):
             print('Losses', losses)
 
     # Test the trained model
-    test_text = 'Do you like horses and Raj who work in Microsoft?'
+    test_text = 'USA was struck by H5N1 virus in 2006.'
     doc = nlp(test_text)
     print("Entities in '%s'" % test_text)
     for ent in doc.ents:
